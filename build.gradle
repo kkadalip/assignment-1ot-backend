@@ -1,0 +1,80 @@
+buildscript {
+    ext {
+        springBootVersion = '2.4.0-SNAPSHOT'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.4.0-SNAPSHOT'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'groovy'
+    id 'jacoco'
+    id 'com.palantir.docker' version '0.19.2'
+    id 'org.sonarqube' version '2.6.2'
+}
+
+bootJar {
+    archiveBaseName = 'assignment-iot'
+    archiveVersion = '1.0'
+    archiveExtension = 'jar'
+    archiveFileName = "${archiveBaseName.get()}-${archiveVersion.get()}.${archiveExtension.get()}"
+}
+// Used by 'Spring Boot Gradle Plugin' in combination with 'Devtools' makes HTML/JS/CSS reloadable.
+bootRun {
+    sourceResources sourceSets.main
+}
+
+group = 'com.iot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '14'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' }
+    jcenter()
+}
+
+dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
+    developmentOnly("org.springframework.boot:spring-boot-devtools:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-data-rest:${springBootVersion}")
+    implementation("log4j:log4j:1.2.17")
+    implementation("org.codehaus.groovy:groovy-all:3.0.4")
+    implementation("org.slf4j:slf4j-api:1.7.30")
+    implementation("org.apache.commons:commons-lang3:3.10")
+    implementation("commons-io:commons-io:2.7")
+    implementation("javax.xml.bind:jaxb-api:2.3.1")
+    implementation("javax.xml.stream:stax-api:1.0-2")
+    implementation("javax.validation:validation-api:2.0.1.Final")
+    implementation("org.springdoc:springdoc-openapi-ui:1.4.0")
+    implementation("org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}")
+    compileOnly("org.projectlombok:lombok:1.18.12")
+    annotationProcessor("org.projectlombok:lombok:1.18.12")
+    runtimeOnly 'com.h2database:h2:1.4.200'
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0-M1")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}
