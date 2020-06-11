@@ -15,6 +15,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
@@ -61,7 +62,7 @@ public class DownloadService implements DownloadI {
         return jaxbContext.createUnmarshaller();
     }
 
-    private ObservationsDTO downloadToDTO(String downloadURL) throws Exception {
+    private ObservationsDTO downloadToDTO(String downloadURL) throws IOException, JAXBException {
         URL url = new URL(downloadURL);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         initHttpConnection(conn);
@@ -74,14 +75,8 @@ public class DownloadService implements DownloadI {
     }
 
     private void initHttpConnection(HttpURLConnection c) throws ProtocolException {
-        //c.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
         c.setRequestMethod("GET");
-        //c.setRequestProperty("Host", "www.ilmateenistus.ee");
         c.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
-        //c.setRequestProperty("Accept-Encoding", "gzip, deflate");
-        //c.setRequestProperty("Accept-Language", "en-US,en;q=0.9,et;q=0.8");
-        //c.setRequestProperty("DNT", "1");
-        //c.setRequestProperty("Upgrade-Insecure-Requests", "1");
         c.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36");
     }
 

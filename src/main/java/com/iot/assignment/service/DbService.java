@@ -33,7 +33,7 @@ public class DbService implements DbI {
 			log.error("downloader observations UI is null, can not save");
 			return;
 		}
-		// TODO instead of persisting with only save or deleting and saving only one, create a separate statistics endpoint and modify the following:
+		// Perhaps instead of persisting with only save or deleting and saving only one, create a separate statistics endpoint and modify the following:
 		this.repository.deleteAll();
 		this.repository.save(obsUI);
 		log.info("finished updateObservations");

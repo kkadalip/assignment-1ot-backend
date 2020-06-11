@@ -3,8 +3,8 @@ package com.iot.assignment.model.weather.xml;
 import lombok.extern.slf4j.Slf4j;
 import com.iot.assignment.enums.TempEnum;
 import com.iot.assignment.enums.UnitEnum;
-import com.iot.assignment.model.weather.xml.Statistics.ObservationStats;
-import com.iot.assignment.model.weather.xml.Statistics.Stats;
+import com.iot.assignment.model.weather.xml.statistics.ObservationStats;
+import com.iot.assignment.model.weather.xml.statistics.Stats;
 import com.iot.assignment.util.UnitUtil;
 import com.iot.assignment.util.WindChillUtil;
 

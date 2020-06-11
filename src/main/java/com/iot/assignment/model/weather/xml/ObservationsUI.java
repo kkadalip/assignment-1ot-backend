@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import lombok.Data;
-import com.iot.assignment.model.weather.xml.Statistics.ObservationStats;
+import com.iot.assignment.model.weather.xml.statistics.ObservationStats;
 
 @Data
 @Entity

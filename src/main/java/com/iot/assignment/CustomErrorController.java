@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -13,11 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class CustomErrorController implements ErrorController {
 
-    private static final String PATH_ERROR = "/error";
     private static final String ERROR_404 = "error-404";
     private static final String ERROR_500 = "error-500";
 
-    @RequestMapping(value = PATH_ERROR)
+    @GetMapping("/error")
     public String errorPage(HttpServletRequest request) {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
         String requestedURI = (String) request.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI);
@@ -37,6 +36,6 @@ public class CustomErrorController implements ErrorController {
 
     @Override
     public String getErrorPath() {
-        return PATH_ERROR;
+        return "/error";
     }
 }

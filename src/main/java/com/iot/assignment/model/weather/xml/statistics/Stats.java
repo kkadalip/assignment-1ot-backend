@@ -1,4 +1,4 @@
-package com.iot.assignment.model.weather.xml.Statistics;
+package com.iot.assignment.model.weather.xml.statistics;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

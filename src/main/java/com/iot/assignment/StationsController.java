@@ -19,7 +19,7 @@ public class StationsController {
         this.observationsRepository = observationsRepository;
     }
 
-    @CrossOrigin
+    @CrossOrigin //NOSONAR
     @GetMapping("/stations")
     public List<ObservationsUI> getAllStations() {
         return new ArrayList<>(observationsRepository.findAll());
