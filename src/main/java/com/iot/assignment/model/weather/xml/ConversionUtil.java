@@ -1,12 +1,12 @@
 package com.iot.assignment.model.weather.xml;
 
-import lombok.extern.slf4j.Slf4j;
 import com.iot.assignment.enums.TempEnum;
 import com.iot.assignment.enums.UnitEnum;
 import com.iot.assignment.model.weather.xml.statistics.ObservationStats;
 import com.iot.assignment.model.weather.xml.statistics.Stats;
 import com.iot.assignment.util.UnitUtil;
 import com.iot.assignment.util.WindChillUtil;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
@@ -54,28 +54,29 @@ public class ConversionUtil {
     private static List<StationUI> convertStationDTOtoUI(List<StationDTO> stationDTOs) {
         List<StationUI> stationUIs = new ArrayList<>();
         for (StationDTO sDTO : stationDTOs) {
-            StationUI sUI = new StationUI();
-            sUI.setName(sDTO.getName());
-            sUI.setWmoCode(sDTO.getWmoCode());
-            sUI.setLongitude(sDTO.getLongitude());
-            sUI.setLatitude(sDTO.getLatitude());
-            sUI.setPhenomenon(sDTO.getPhenomenon());
-            sUI.setVisibility(sDTO.getVisibility());
-            sUI.setPrecipitations(sDTO.getPrecipitations());
-            sUI.setAirPressure(sDTO.getAirPressure());
-            sUI.setRelativeHumidity(sDTO.getRelativeHumidity());
-            sUI.setAirTemperature(sDTO.getAirTemperature());
-            sUI.setWindDirection(sDTO.getWindDirection());
-            sUI.setWindSpeed(sDTO.getWindSpeed());
-            sUI.setWindSpeedMax(sDTO.getWindSpeedMax());
-            sUI.setWaterLevel(sDTO.getWaterLevel());
-            sUI.setWaterLevelEh2000(sDTO.getWaterLevelEh2000());
-            sUI.setWaterTemperature(sDTO.getWaterTemperature());
-            sUI.setUvIndex(sDTO.getUvIndex());
-            sUI.setWindChillC(WindChillUtil.calcWindChillInC(sDTO.getAirTemperature(), sDTO.getWindSpeed()));
-            sUI.setWindChillF(WindChillUtil.calcWindChillInF(sDTO.getAirTemperature(), sDTO.getWindSpeed()));
-            sUI.setWindChillMaxC(WindChillUtil.calcWindChillInC(sDTO.getAirTemperature(), sDTO.getWindSpeedMax()));
-            sUI.setWindChillMaxF(WindChillUtil.calcWindChillInF(sDTO.getAirTemperature(), sDTO.getWindSpeedMax()));
+            StationUI sUI = StationUI.builder()
+                    .name(sDTO.getName())
+                    .wmoCode(sDTO.getWmoCode())
+                    .longitude(sDTO.getLongitude())
+                    .latitude(sDTO.getLatitude())
+                    .phenomenon(sDTO.getPhenomenon())
+                    .visibility(sDTO.getVisibility())
+                    .precipitations(sDTO.getPrecipitations())
+                    .airPressure(sDTO.getAirPressure())
+                    .relativeHumidity(sDTO.getRelativeHumidity())
+                    .airTemperature(sDTO.getAirTemperature())
+                    .windDirection(sDTO.getWindDirection())
+                    .windSpeed(sDTO.getWindSpeed())
+                    .windSpeedMax(sDTO.getWindSpeedMax())
+                    .waterLevel(sDTO.getWaterLevel())
+                    .waterLevelEh2000(sDTO.getWaterLevelEh2000())
+                    .waterTemperature(sDTO.getWaterTemperature())
+                    .uvIndex(sDTO.getUvIndex())
+                    .windChillC(WindChillUtil.calcWindChillInC(sDTO.getAirTemperature(), sDTO.getWindSpeed()))
+                    .windChillF(WindChillUtil.calcWindChillInF(sDTO.getAirTemperature(), sDTO.getWindSpeed()))
+                    .windChillMaxC(WindChillUtil.calcWindChillInC(sDTO.getAirTemperature(), sDTO.getWindSpeedMax()))
+                    .windChillMaxF(WindChillUtil.calcWindChillInF(sDTO.getAirTemperature(), sDTO.getWindSpeedMax()))
+                    .build();
             stationUIs.add(sUI);
         }
         return stationUIs;

@@ -38,6 +38,8 @@
 Open http://localhost:9000/ (username: admin password: admin)
 #### 2. Analyzing project code
     Running and uploading project code analysis to local SonarQube server: 
+    Open new command prompt window in project root eg:
+    $ cd C:\Users\username\workspace\assignment-1ot-backend
     $ gradlew sonarqube
     
     For custom host url and port: 
