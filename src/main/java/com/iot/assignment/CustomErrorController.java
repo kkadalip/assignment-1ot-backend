@@ -14,20 +14,23 @@ import javax.servlet.http.HttpServletRequest;
 public class CustomErrorController implements ErrorController {
 
     private static final String PATH_ERROR = "/error";
+    private static final String ERROR_404 = "error-404";
+    private static final String ERROR_500 = "error-500";
 
     @RequestMapping(value = PATH_ERROR)
     public String errorPage(HttpServletRequest request) {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
-        log.info("Status is " + status + " for url " + request.getRequestURL());
+        String requestedURI = (String) request.getAttribute(RequestDispatcher.FORWARD_REQUEST_URI);
+        log.info("Status is " + status + " for url " + requestedURI);
         String root = "/error/";
         if (status == null) {
-            return root + "error-404";
+            return root + ERROR_404;
         }
         int statusCode = Integer.parseInt(status.toString());
         if (statusCode == HttpStatus.NOT_FOUND.value()) {
-            return root + "error-404";
+            return root + ERROR_404;
         } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-            return root + "error-500";
+            return root + ERROR_500;
         }
         return root + "error";
     }

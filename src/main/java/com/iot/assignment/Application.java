@@ -16,10 +16,10 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 @SpringBootApplication
 @EnableScheduling
-public class AssignmentApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AssignmentApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Bean
