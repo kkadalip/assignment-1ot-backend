@@ -9,11 +9,15 @@
    https://github.com/kkadalip/assignment-1ot-backend/archive/master.zip  
 #### 2. Open command prompt and navigate to project root
     (example) $ cd C:\Users\username\workspace\assignment-1ot-backend
-#### 3. [OPTION 1] Build and run application using Docker
-    $ docker build -t iot/weatherapp .
-    $ docker run -p 8090:8090 iot/weatherapp .
+#### 3. [OPTION 1] Build and run application AND SonarQube server using Docker-compose
+    ($ docker-compose down)
+    $ docker-compose up
     Open http://localhost:8090/
-#### 3. [OPTION 2] Build and run manually with provided gradle wrapper
+#### 3. [OPTION 2] Build and run application using Docker
+    $ docker build -t weatherapp .
+    $ docker run -p 8090:8090 weatherapp .
+    Open http://localhost:8090/
+#### 3. [OPTION 3] Build and run manually with provided gradle wrapper
     (optional) $ gradlew clean
     1) Building the application:
     $ gradlew build
@@ -33,9 +37,11 @@
     config/application.properties
     config/application.yml
 ## Analyze code quality via SonarQube (using Docker)
-#### 1. Running Sonarqube server locally:
+#### 1. Running Sonarqube server locally (if not already running via docker-compose):
     $ docker pull sonarqube
     $ docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+    If it already exists then:
+    $ docker start sonarqube
 Open http://localhost:9000/ (username: admin password: admin)
 #### 2. Analyzing project code
     Running and uploading project code analysis to local SonarQube server: 
@@ -56,6 +62,7 @@ Open http://localhost:9000/ (username: admin password: admin)
 * JAXB API for XML parsing - https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api/
 * Logging: Log4J (configuration at config/log/log4j2.xml)
 * Unit tests: Junit5 - https://junit.org/junit5/docs/current/user-guide/
+* Docker compose - https://github.com/avast/gradle-docker-compose-plugin
 ### Application API docs (when application is running)
 * http://localhost:8090/swagger-ui.html
 * http://localhost:8090/v3/api-docs

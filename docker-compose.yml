@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  weatherapp:
+    restart: on-failure
+    build: ./
+    expose:
+      - "8090"
+    ports:
+      - 8090:8090
+  sonarqube:
+    image: sonarqube:lts
+    ports:
+      - 9000:9000
