@@ -70,6 +70,8 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}")
     compileOnly("org.projectlombok:lombok:1.18.12")
     annotationProcessor("org.projectlombok:lombok:1.18.12")
+    testImplementation("org.projectlombok:lombok:1.18.12")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.12")
     runtimeOnly 'com.h2database:h2:1.4.200'
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0-M1")
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")

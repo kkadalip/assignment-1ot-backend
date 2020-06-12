@@ -1,6 +1,6 @@
 package com.iot.assignment.service;
 
-import com.iot.assignment.config.properties.WeatherProperties;
+import com.iot.assignment.WeatherProperties;
 import com.iot.assignment.interfaces.DownloadI;
 import com.iot.assignment.model.weather.xml.ConversionUtil;
 import com.iot.assignment.model.weather.xml.ObservationsDTO;

@@ -12,6 +12,7 @@
 #### 3. [OPTION 1] Build and run application using Docker
     $ docker build -t iot/weatherapp .
     $ docker run -p 8090:8090 iot/weatherapp .
+    Open http://localhost:8090/
 #### 3. [OPTION 2] Build and run manually with provided gradle wrapper
     (optional) $ gradlew clean
     1) Building the application:
@@ -25,7 +26,7 @@
     OR
     $ gradlew build && java -jar build/libs/assignment-iot-1.0.jar --mode=dev --port=8091
 ######	NB! Port 8090 will be used if "--port=" variable is not provided
-###### To run tests separately:
+#### Running tests separately:
 	$ gradle test
 ### Configuration files    
     All environments:
@@ -54,6 +55,7 @@ Open http://localhost:9000/ (username: admin password: admin)
 * REST API UI: Swagger UI - https://swagger.io/tools/swagger-ui/
 * JAXB API for XML parsing - https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api/
 * Logging: Log4J (configuration at config/log/log4j2.xml)
+* Unit tests: Junit5 - https://junit.org/junit5/docs/current/user-guide/
 ### Application API docs (when application is running)
 * http://localhost:8090/swagger-ui.html
 * http://localhost:8090/v3/api-docs
