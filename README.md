@@ -30,8 +30,6 @@
     OR
     $ gradlew build && java -jar build/libs/assignment-iot-1.0.jar --mode=dev --port=8091
 ######	NB! Port 8090 will be used if "--port=" variable is not provided
-#### Running tests separately:
-	$ gradle test
 ### Configuration files    
     All environments:
     config/application.properties
@@ -43,14 +41,16 @@
     If it already exists then:
     $ docker start sonarqube
 Open http://localhost:9000/ (username: admin password: admin)
-#### 2. Analyzing project code
-    Running and uploading project code analysis to local SonarQube server: 
+#### 2. Running tests for test coverage (for SonarQube):
+	$ gradlew test
+#### 3. Analyzing project code
+    Building and uploading project code analysis to local SonarQube server: 
     Open new command prompt window in project root eg:
     $ cd C:\Users\username\workspace\assignment-1ot-backend
     $ gradlew sonarqube
     
     For custom host url and port: 
-    $ .\gradle.bat -Dsonar.host.url=http://myhost:9000 sonarqube
+    $ gradlew -Dsonar.host.url=http://localhost:9000 sonarqube
 ## Technology stack & frameworks in use
 * Spring Boot - https://spring.io/projects/spring-boot
 * Gradle 6.5 (optional if using docker) - https://gradle.org/install/

@@ -8,6 +8,6 @@ services:
     ports:
       - 8090:8090
   sonarqube:
-    image: sonarqube:lts
+    image: sonarqube:latest
     ports:
       - 9000:9000
