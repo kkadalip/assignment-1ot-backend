@@ -1,10 +1,16 @@
 package com.iot.assignment.interfaces;
 
-import com.iot.assignment.model.weather.xml.ObservationsDTO;
-import com.iot.assignment.model.weather.xml.ObservationsUI;
+import com.iot.assignment.model.weather.xml.forecasts.dto.ForecastsDTO;
+import com.iot.assignment.model.weather.xml.forecasts.ui.ForecastsUI;
+import com.iot.assignment.model.weather.xml.observations.dto.ObservationsDTO;
+import com.iot.assignment.model.weather.xml.observations.ui.ObservationsUI;
 
 public interface DownloadI {
-    ObservationsDTO downloadObservationsDTO(String fileName);
+    ObservationsDTO downloadObservationsDTO();
 
-    ObservationsUI downloadObservationsUI(String fileName);
+    ObservationsUI downloadObservationsUI();
+
+    ForecastsDTO downloadForecastsDTO();
+
+    ForecastsUI downloadForecastsUI();
 }

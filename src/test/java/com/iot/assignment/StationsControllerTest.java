@@ -1,6 +1,7 @@
 package com.iot.assignment;
 
-import com.iot.assignment.model.weather.display.ObservationsRepository;
+import com.iot.assignment.model.weather.display.RepositoryForecasts;
+import com.iot.assignment.model.weather.display.RepositoryObservations;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,11 +33,13 @@ public class StationsControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private ObservationsRepository observationsRepository;
+    private RepositoryObservations repositoryObservations;
+    @MockBean
+    private RepositoryForecasts repositoryForecasts;
 
     @BeforeEach
     public void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(new StationsController(observationsRepository)).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(new StationsController(repositoryObservations, repositoryForecasts)).build();
     }
 
     @Test
@@ -50,12 +53,12 @@ public class StationsControllerTest {
     }
 
     private MockHttpServletRequestBuilder getReqStations() {
-        return get("/stations");
+        return get("/api/stations");
     }
 
     @Test
     public void getAllStations404() throws Exception {
-        mockMvc.perform(get("/stations/doesnotexist")).andExpect(status().isNotFound());
+        mockMvc.perform(get("/doesnotexist")).andExpect(status().isNotFound());
     }
 
     @Test

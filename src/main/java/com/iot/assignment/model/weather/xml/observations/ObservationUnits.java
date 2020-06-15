@@ -1,4 +1,4 @@
-package com.iot.assignment.model.weather.xml;
+package com.iot.assignment.model.weather.xml.observations;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-class ObservationUnits {
+public class ObservationUnits {
 	@Id
 	@GeneratedValue
 	private Long id;

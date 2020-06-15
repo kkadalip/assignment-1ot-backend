@@ -20,11 +20,11 @@ public class WeatherPropertiesTest {
 
     @Test
     public void downloadUrlExists() {
-        Assert.assertNotNull("Download URL must have a value", weatherProperties.getDownloadUrl());
+        Assert.assertNotNull("Download URL must have a value", weatherProperties.getDownloadUrlObservations());
     }
 
     @Test
     public void downloadUrlValueCorrect() {
-        Assert.assertEquals("http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php", weatherProperties.getDownloadUrl());
+        Assert.assertEquals("http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php", weatherProperties.getDownloadUrlObservations());
     }
 }

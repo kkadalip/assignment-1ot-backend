@@ -15,16 +15,22 @@ import javax.validation.constraints.NotNull;
 public class WeatherProperties {
 
     @NotNull
-    @Value("${download.url}")
-    private String downloadUrl;
+    @Value("${download.url.observations}")
+    private String downloadUrlObservations;
 
-    @Value("${download.devmode.offline-sample}")
-    private boolean downloadOfflineSampleInstead;
+    @NotNull
+    @Value("${download.url.forecasts}")
+    private String downloadUrlForecasts;
 
-    public boolean isDownloadDevmodeOfflineSample() {
-        if (downloadOfflineSampleInstead) {
-            log.warn("DEV MODE ON! USING OFFLINE WEATHER XML SAMPLE INSTEAD");
-        }
-        return downloadOfflineSampleInstead;
-    }
+    @Value("${download.url.observations.devmode-offline-sample}")
+    private boolean downloadDevmodeOfflineSampleObservations;
+
+    @Value("${download.url.observations.devmode-offline-sample.path}")
+    private String downloadDevmodeOfflineSampleObservationsPath;
+
+    @Value("${download.url.forecasts.devmode-offline-sample}")
+    private boolean downloadDevmodeOfflineSampleForecasts;
+
+    @Value("${download.url.forecasts.devmode-offline-sample.path}")
+    private String downloadDevmodeOfflineSampleForecastsPath;
 }

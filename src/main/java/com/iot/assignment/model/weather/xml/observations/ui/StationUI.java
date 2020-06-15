@@ -1,4 +1,4 @@
-package com.iot.assignment.model.weather.xml;
+package com.iot.assignment.model.weather.xml.observations.ui;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
+public
 class StationUI {
 	@Id
 	@GeneratedValue

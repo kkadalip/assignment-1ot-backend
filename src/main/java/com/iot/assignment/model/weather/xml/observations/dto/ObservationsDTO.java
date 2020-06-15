@@ -1,4 +1,4 @@
-package com.iot.assignment.model.weather.xml;
+package com.iot.assignment.model.weather.xml.observations.dto;
 
 import java.util.List;
 

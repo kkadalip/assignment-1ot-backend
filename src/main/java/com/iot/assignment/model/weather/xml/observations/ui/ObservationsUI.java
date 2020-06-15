@@ -1,4 +1,4 @@
-package com.iot.assignment.model.weather.xml;
+package com.iot.assignment.model.weather.xml.observations.ui;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.iot.assignment.model.weather.xml.observations.ObservationUnits;
 import lombok.Data;
 import com.iot.assignment.model.weather.xml.statistics.ObservationStats;
 

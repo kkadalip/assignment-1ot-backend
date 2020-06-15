@@ -74,4 +74,6 @@ Open http://localhost:9000/ (username: admin password: admin)
 ##### Source data and logic
 * http://www.ilmateenistus.ee/teenused/ilmainfo/eesti-vaatlusandmed-xml/
 * http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php
+* http://www.ilmateenistus.ee/ilma_andmed/xml/forecast.php?lang=eng (ENGLISH)
+* http://www.ilmateenistus.ee/ilma_andmed/xml/forecast.php (ESTONIAN)
 * https://www.freemathhelp.com/wind-chill.html

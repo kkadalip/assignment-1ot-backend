@@ -1,4 +1,4 @@
-package com.iot.assignment.model.weather.xml;
+package com.iot.assignment.model.weather.xml.observations.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,8 +8,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 
 @Data
-@XmlRootElement(name = "station")
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "station")
 public class StationDTO {
 	@XmlElement
 	private String name;

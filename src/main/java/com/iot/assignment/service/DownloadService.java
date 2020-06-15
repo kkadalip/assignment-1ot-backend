@@ -2,10 +2,14 @@ package com.iot.assignment.service;
 
 import com.iot.assignment.WeatherProperties;
 import com.iot.assignment.interfaces.DownloadI;
-import com.iot.assignment.model.weather.xml.ConversionUtil;
-import com.iot.assignment.model.weather.xml.ObservationsDTO;
-import com.iot.assignment.model.weather.xml.ObservationsUI;
-import com.iot.assignment.model.weather.xml.StationDTO;
+import com.iot.assignment.model.weather.xml.forecasts.dto.ForecastDTO;
+import com.iot.assignment.model.weather.xml.forecasts.ForecastsConversionUtil;
+import com.iot.assignment.model.weather.xml.forecasts.dto.ForecastsDTO;
+import com.iot.assignment.model.weather.xml.forecasts.ui.ForecastsUI;
+import com.iot.assignment.model.weather.xml.observations.ObservationsConversionUtil;
+import com.iot.assignment.model.weather.xml.observations.dto.ObservationsDTO;
+import com.iot.assignment.model.weather.xml.observations.ui.ObservationsUI;
+import com.iot.assignment.model.weather.xml.observations.dto.StationDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +21,6 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.List;
@@ -32,43 +35,93 @@ public class DownloadService implements DownloadI {
         this.weatherProperties = weatherProperties;
     }
 
-    public ObservationsDTO downloadObservationsDTO(String fileName) {
-        log.info("starting download");
-        ObservationsDTO observations = null;
-        try {
-            if (weatherProperties.isDownloadDevmodeOfflineSample()) {
-                String pathToFile = "src/main/resources/static/observations_offline_development.xml";
-                log.info("offline download url is " + pathToFile);
-                observations = (ObservationsDTO) getUnmarshaller().unmarshal(new File(pathToFile));
-            } else {
-                String downloadUrl = weatherProperties.getDownloadUrl();
-                log.info("online download url is " + downloadUrl);
-                observations = downloadToDTO(downloadUrl);
-            }
-        } catch (JAXBException e) {
-            log.error("jaxb failed", e);
-        } catch (MalformedURLException e) {
-            log.error("downloadURL failed", e);
-        } catch (Exception ex) {
-            log.error("getting observations failed", ex);
+    public ObservationsDTO downloadObservationsDTO() {
+        log.info("observations starting download");
+        ObservationsDTO observations;
+        if (weatherProperties.isDownloadDevmodeOfflineSampleObservations()) {
+            String pathToFile = weatherProperties.getDownloadDevmodeOfflineSampleObservationsPath();
+            log.warn("[DEVMODE] observations offline download url is " + pathToFile);
+            observations = (ObservationsDTO) downloadFileToObjectObservationsDTO(pathToFile);
+        } else {
+            String downloadUrl = weatherProperties.getDownloadUrlObservations();
+            log.info("[LIVEMODE] observations online download url is " + downloadUrl);
+            observations = downloadObservationsToDTO(downloadUrl);
         }
         log.info("download finished");
         debug(observations);
         return observations;
     }
 
-    private Unmarshaller getUnmarshaller() throws JAXBException {
+    public ForecastsDTO downloadForecastsDTO() {
+        log.info("forecasts starting download");
+        ForecastsDTO forecasts;
+        if (weatherProperties.isDownloadDevmodeOfflineSampleForecasts()) {
+            String pathToFile = weatherProperties.getDownloadDevmodeOfflineSampleForecastsPath();
+            log.warn("[DEVMODE] forecasts offline download url is " + pathToFile);
+            forecasts = (ForecastsDTO) downloadFileToObjectForecastsDTO(pathToFile);
+        } else {
+            String downloadUrl = weatherProperties.getDownloadUrlForecasts();
+            log.warn("[LIVEMODE] forecasts online download url is " + downloadUrl);
+            forecasts = downloadForecastsToDTO(downloadUrl);
+        }
+        debug(forecasts);
+        log.info("download finished");
+        return forecasts;
+    }
+
+    private Unmarshaller getUnmarshallerObservations() throws JAXBException {
         JAXBContext jaxbContext = JAXBContext.newInstance(ObservationsDTO.class);
         return jaxbContext.createUnmarshaller();
     }
 
-    private ObservationsDTO downloadToDTO(String downloadURL) throws IOException, JAXBException {
+    private Unmarshaller getUnmarshallerForecasts() throws JAXBException {
+        JAXBContext jaxbContext = JAXBContext.newInstance(ForecastsDTO.class);
+        return jaxbContext.createUnmarshaller();
+    }
+
+    private ObservationsDTO downloadObservationsToDTO(String downloadURL) {
+        try {
+            return (ObservationsDTO) downloadToObjectDTO(downloadURL, getUnmarshallerObservations());
+        } catch (Exception e) {
+            log.error("downloadObservationsToDTO failed", e);
+        }
+        return null;
+    }
+
+    private ForecastsDTO downloadForecastsToDTO(String downloadURL) {
+        try {
+            return (ForecastsDTO) downloadToObjectDTO(downloadURL, getUnmarshallerForecasts());
+        } catch (Exception e) {
+            log.error("downloadForecastsToDTO failed", e);
+        }
+        return null;
+    }
+
+    private Object downloadFileToObjectObservationsDTO(String pathToFile) {
+        try {
+            return getUnmarshallerObservations().unmarshal(new File(pathToFile));
+        } catch (Exception e) {
+            log.error("downloadFileToObjectObservationsDTO failed", e);
+        }
+        return null;
+    }
+
+    private Object downloadFileToObjectForecastsDTO(String pathToFile) {
+        try {
+            return getUnmarshallerForecasts().unmarshal(new File(pathToFile));
+        } catch (Exception e) {
+            log.error("downloadFileToObjectForecastsDTO failed", e);
+        }
+        return null;
+    }
+
+    private Object downloadToObjectDTO(String downloadURL, Unmarshaller unmarshaller) throws IOException, JAXBException {
         URL url = new URL(downloadURL);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         initHttpConnection(conn);
         conn.connect();
         BufferedInputStream in = new BufferedInputStream(conn.getInputStream());
-        ObservationsDTO result = (ObservationsDTO) getUnmarshaller().unmarshal(in);
+        Object result = unmarshaller.unmarshal(in);
         in.close();
         conn.disconnect();
         return result;
@@ -81,8 +134,13 @@ public class DownloadService implements DownloadI {
     }
 
     @Override
-    public ObservationsUI downloadObservationsUI(String fileName) {
-        return ConversionUtil.convertDTOtoUI(downloadObservationsDTO(fileName));
+    public ObservationsUI downloadObservationsUI() {
+        return ObservationsConversionUtil.convertDTOtoUI(downloadObservationsDTO());
+    }
+
+    @Override
+    public ForecastsUI downloadForecastsUI() {
+        return ForecastsConversionUtil.convertDTOtoUI(downloadForecastsDTO());
     }
 
     private void debug(ObservationsDTO observations) {
@@ -93,6 +151,17 @@ public class DownloadService implements DownloadI {
             }
         } else {
             log.error("observations is null");
+        }
+    }
+
+    private void debug(ForecastsDTO forecasts) {
+        if (forecasts != null) {
+            List<ForecastDTO> displayedStations = forecasts.getForecasts();
+            for (ForecastDTO forecast : displayedStations) {
+                log.info(String.valueOf(forecast));
+            }
+        } else {
+            log.error("forecasts is null");
         }
     }
 }

@@ -1,7 +1,11 @@
-package com.iot.assignment.model.weather.xml;
+package com.iot.assignment.model.weather.xml.observations;
 
 import com.iot.assignment.enums.TempEnum;
 import com.iot.assignment.enums.UnitEnum;
+import com.iot.assignment.model.weather.xml.observations.dto.ObservationsDTO;
+import com.iot.assignment.model.weather.xml.observations.dto.StationDTO;
+import com.iot.assignment.model.weather.xml.observations.ui.ObservationsUI;
+import com.iot.assignment.model.weather.xml.observations.ui.StationUI;
 import com.iot.assignment.model.weather.xml.statistics.ObservationStats;
 import com.iot.assignment.model.weather.xml.statistics.Stats;
 import com.iot.assignment.util.UnitUtil;
@@ -14,20 +18,20 @@ import java.util.List;
 import java.util.Objects;
 
 @Slf4j
-public class ConversionUtil {
-    private ConversionUtil() {
+public class ObservationsConversionUtil {
+    private ObservationsConversionUtil() {
         throw new IllegalStateException("Utility class!");
     }
 
-    public static ObservationsUI convertDTOtoUI(ObservationsDTO o) {
-        if (o == null) {
+    public static ObservationsUI convertDTOtoUI(ObservationsDTO dto) {
+        if (dto == null) {
             log.error("convertDTOtoUI observationsDTO o is null!");
             return null;
         }
         ObservationsUI obsUI = new ObservationsUI();
-        log.info("setting timestamp to " + o.getTimestamp());
-        obsUI.setTimestamp(o.getTimestamp());
-        List<StationUI> stationUIs = convertStationDTOtoUI(o.getStations());
+        log.info("setting timestamp to " + dto.getTimestamp());
+        obsUI.setTimestamp(dto.getTimestamp());
+        List<StationUI> stationUIs = convertStationDTOtoUI(dto.getStations());
         obsUI.setStations(stationUIs);
         obsUI.setUnits(getObservationUnits());
         try {
