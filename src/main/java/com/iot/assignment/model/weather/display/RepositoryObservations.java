@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin //NOSONAR
 @Repository
-//@RepositoryRestResource(path = "observations", collectionResourceRel = "observations") // Creates /api/observations
 public interface RepositoryObservations extends JpaRepository<ObservationsUI, Long> {
 
 }
