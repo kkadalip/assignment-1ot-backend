@@ -26,7 +26,7 @@ public class ForecastsConversionUtil {
 
 	public static ForecastsUI convertDTOtoUI(ForecastsDTO dto) {
 		if (dto == null) {
-			log.error("convertDTOtoUI forecastsDTO o is null!");
+			log.error("convertDTOtoUI dto is null");
 			return null;
 		}
 		ForecastsUI ui = new ForecastsUI();
