@@ -1,7 +1,17 @@
 package com.iot.assignment.model.weather.xml.forecasts;
 
-import com.iot.assignment.model.weather.xml.forecasts.dto.*;
-import com.iot.assignment.model.weather.xml.forecasts.ui.*;
+import com.iot.assignment.model.weather.xml.forecasts.dto.ForecastDTO;
+import com.iot.assignment.model.weather.xml.forecasts.dto.ForecastDayDTO;
+import com.iot.assignment.model.weather.xml.forecasts.dto.ForecastNightDTO;
+import com.iot.assignment.model.weather.xml.forecasts.dto.ForecastsDTO;
+import com.iot.assignment.model.weather.xml.forecasts.dto.PlaceDTO;
+import com.iot.assignment.model.weather.xml.forecasts.dto.WindDTO;
+import com.iot.assignment.model.weather.xml.forecasts.ui.ForecastDayUI;
+import com.iot.assignment.model.weather.xml.forecasts.ui.ForecastNightUI;
+import com.iot.assignment.model.weather.xml.forecasts.ui.ForecastUI;
+import com.iot.assignment.model.weather.xml.forecasts.ui.ForecastsUI;
+import com.iot.assignment.model.weather.xml.forecasts.ui.PlaceUI;
+import com.iot.assignment.model.weather.xml.forecasts.ui.WindUI;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;

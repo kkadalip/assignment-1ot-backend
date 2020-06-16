@@ -1,9 +1,15 @@
 package com.iot.assignment.model.weather.xml.forecasts.ui;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Data
@@ -15,6 +21,6 @@ public class ForecastsUI {
 	private Long id;
 
 	@OneToMany(targetEntity = ForecastUI.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@Column(name = "forecasts")
+	@JsonProperty("forecasts")
 	private List<ForecastUI> forecastUIs;
 }
