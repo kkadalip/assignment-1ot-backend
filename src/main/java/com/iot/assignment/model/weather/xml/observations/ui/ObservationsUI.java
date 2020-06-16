@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.iot.assignment.model.weather.xml.observations.ObservationUnits;
 import lombok.Data;
 import com.iot.assignment.model.weather.xml.statistics.ObservationStats;
@@ -19,6 +20,7 @@ import com.iot.assignment.model.weather.xml.statistics.ObservationStats;
 public class ObservationsUI {
 	@Id
 	@GeneratedValue
+	@JsonIgnore
 	private Long id;
 
 	@OneToMany(targetEntity = StationUI.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)

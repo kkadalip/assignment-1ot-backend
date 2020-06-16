@@ -1,172 +1,197 @@
 <?xml version="1.0" encoding="iso-8859-1" ?>
 <forecasts>
-	<forecast date="2020-06-16">
-		<night>
-			<phenomenon>Moderate shower</phenomenon>
-			<tempmin>13</tempmin>
-			<tempmax>17</tempmax>
-			<text>Partly cloudy. Rain showers in many places, thunder. Fog in places. Wind mainly around east 2-7 m/s. Air temperature 13..17°C.</text>
-			<place>
-				<name>Harku</name>
-				<phenomenon>Moderate shower</phenomenon>
-				<tempmin>14</tempmin>
-			</place>
-			<place>
-				<name>Jõhvi</name>
-				<phenomenon>Variable clouds</phenomenon>
-				<tempmin>14</tempmin>
-			</place>
-			<place>
-				<name>Tartu</name>
-				<phenomenon>Thunderstorm</phenomenon>
-				<tempmin>16</tempmin>
-			</place>
-			<place>
-				<name>Pärnu</name>
-				<phenomenon>Fog</phenomenon>
-				<tempmin>16</tempmin>
-			</place>
-			<place>
-				<name>Kuressaare</name>
-				<phenomenon>Light shower</phenomenon>
-				<tempmin>13</tempmin>
-			</place>
-			<place>
-				<name>Türi</name>
-				<phenomenon>Moderate shower</phenomenon>
-				<tempmin>15</tempmin>
-			</place>
-			<wind>
-				<name>Kuusiku</name>
-				<direction>Easterly winds</direction>
-				<speedmin>2</speedmin>
-				<speedmax>6</speedmax>
-				<gust></gust>
-			</wind>
-			<wind>
-				<name>Väike-Maarja</name>
-				<direction>Northeast wind</direction>
-				<speedmin>2</speedmin>
-				<speedmax>6</speedmax>
-				<gust></gust>
-			</wind>
-			<wind>
-				<name>Võrtsjärv</name>
-				<direction>Southeast wind</direction>
-				<speedmin>2</speedmin>
-				<speedmax>6</speedmax>
-				<gust></gust>
-			</wind>
-			<sea>Forecast for Baltic Sea valid 24 hours from 19:00 Jun 15 to 19:00 UTC Jun 16, 2020.
+    <forecast date="2020-06-16">
+        <night>
+            <phenomenon>Moderate shower</phenomenon>
+            <tempmin>13</tempmin>
+            <tempmax>17</tempmax>
+            <text>Partly cloudy. Rain showers in many places, thunder. Fog in places. Wind mainly around east 2-7 m/s.
+                Air temperature 13..17Â°C.
+            </text>
+            <place>
+                <name>Harku</name>
+                <phenomenon>Moderate shower</phenomenon>
+                <tempmin>14</tempmin>
+            </place>
+            <place>
+                <name>JÃµhvi</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmin>14</tempmin>
+            </place>
+            <place>
+                <name>Tartu</name>
+                <phenomenon>Thunderstorm</phenomenon>
+                <tempmin>16</tempmin>
+            </place>
+            <place>
+                <name>PÃ¤rnu</name>
+                <phenomenon>Fog</phenomenon>
+                <tempmin>16</tempmin>
+            </place>
+            <place>
+                <name>Kuressaare</name>
+                <phenomenon>Light shower</phenomenon>
+                <tempmin>13</tempmin>
+            </place>
+            <place>
+                <name>TÃ¼ri</name>
+                <phenomenon>Moderate shower</phenomenon>
+                <tempmin>15</tempmin>
+            </place>
+            <wind>
+                <name>Kuusiku</name>
+                <direction>Easterly winds</direction>
+                <speedmin>2</speedmin>
+                <speedmax>6</speedmax>
+                <gust></gust>
+            </wind>
+            <wind>
+                <name>VÃ¤ike-Maarja</name>
+                <direction>Northeast wind</direction>
+                <speedmin>2</speedmin>
+                <speedmax>6</speedmax>
+                <gust></gust>
+            </wind>
+            <wind>
+                <name>VÃµrtsjÃ¤rv</name>
+                <direction>Southeast wind</direction>
+                <speedmin>2</speedmin>
+                <speedmax>6</speedmax>
+                <gust></gust>
+            </wind>
+            <sea>Forecast for Baltic Sea valid 24 hours from 19:00 Jun 15 to 19:00 UTC Jun 16, 2020.
 
-Weather summary: Low moving to the Baltic Sea from Lithuania.
+                Weather summary: Low moving to the Baltic Sea from Lithuania.
 
-No warnings.
+                No warnings.
 
-Northern Baltic: at night wind around east 3-9 m/s, daytime variable wind 2-7 m/s, gusty during thunder. Locally rain showers, risk of thunder. Visibility good, reduced in rain, at night fog possible.
-Moonsund, Northern Gulf of Riga, Gulf of Finland: variable wind 2-7 m/s, gusty during thunder. Locally rain showers, thunder in places. Visibility good, reduced in rain, at night and in morning fog in places.</sea>
-			<peipsi>Wind around east 2-7 m/s, gusty during thunder. Wave height up to 0.5 m. Locally rain showers, thunder. Visibility good, reduced in rain. Air temperature 15..17°C.</peipsi>
-		</night>
-		<day>
-			<phenomenon>Thunderstorm</phenomenon>
-			<tempmin>15</tempmin>
-			<tempmax>26</tempmax>
-			<text>Variable clouds. Rain showers in many places, thunder. Variable wind 2-7 m/s, gusty during thunder. Air temperature 21..26, on coast 15..18°C.</text>
-			<place>
-				<name>Harku</name>
-				<phenomenon>Thunderstorm</phenomenon>
-				<tempmax>23</tempmax>
-			</place>
-			<place>
-				<name>Jõhvi</name>
-				<phenomenon>Moderate shower</phenomenon>
-				<tempmax>23</tempmax>
-			</place>
-			<place>
-				<name>Tartu</name>
-				<phenomenon>Thunderstorm</phenomenon>
-				<tempmax>25</tempmax>
-			</place>
-			<place>
-				<name>Pärnu</name>
-				<phenomenon>Variable clouds</phenomenon>
-				<tempmax>21</tempmax>
-			</place>
-			<place>
-				<name>Kuressaare</name>
-				<phenomenon>Variable clouds</phenomenon>
-				<tempmax>18</tempmax>
-			</place>
-			<place>
-				<name>Türi</name>
-				<phenomenon>Light shower</phenomenon>
-				<tempmax>24</tempmax>
-			</place>
-			<wind>
-				<name>Kuusiku</name>
-				<direction>West wind</direction>
-				<speedmin>2</speedmin>
-				<speedmax>6</speedmax>
-				<gust></gust>
-			</wind>
-			<wind>
-				<name>Väike-Maarja</name>
-				<direction>East wind</direction>
-				<speedmin>2</speedmin>
-				<speedmax>6</speedmax>
-				<gust></gust>
-			</wind>
-			<wind>
-				<name>Võrtsjärv</name>
-				<direction>South wind</direction>
-				<speedmin>2</speedmin>
-				<speedmax>6</speedmax>
-				<gust></gust>
-			</wind>
-			<sea></sea>
-			<peipsi>Variable wind 2-7 m/s, gusty during thunder. Wave height up to 0.5 m. Locally rain showers, thunder. Visibility good, reduced in rain. Air temperature 22..24°C.</peipsi>
-		</day>
-	</forecast>
-	<forecast date="2020-06-17">
-		<night>
-			<phenomenon>Moderate shower</phenomenon>
-			<tempmin>10</tempmin>
-			<tempmax>18</tempmax>
-			<text>Cloudy with bright spells. Rain showers in many places, thunder possible. Variable wind 1-7 m/s. Air temperature 13..18, on coast locally 10°C.</text>
-		</night>
-		<day>
-			<phenomenon>Moderate shower</phenomenon>
-			<tempmin>16</tempmin>
-			<tempmax>28</tempmax>
-			<text>Variable cloud. Rain showers in many places, risk of thunder. Mainly wind around east 3-9 m/s, around noon veering on islands and on the inner part of the mainland around south. Air temperature 22..28, on coast locally 16..20°C.</text>
-		</day>
-	</forecast>
-	<forecast date="2020-06-18">
-		<night>
-			<phenomenon>Light shower</phenomenon>
-			<tempmin>10</tempmin>
-			<tempmax>19</tempmax>
-			<text>Slightly or partly cloudy. Rain showers locally, risk of thunder. Variable wind 1-7 m/s. Air temperature 13..19, on islands and western coast locally 10°C.</text>
-		</night>
-		<day>
-			<phenomenon>Light shower</phenomenon>
-			<tempmin>16</tempmin>
-			<tempmax>30</tempmax>
-			<text>Slightly or partly cloudy. Locally rain showers, thunder possible. Variable wind 2-7 m/s. Air temperature 24..30, on coast 16..21°C.</text>
-		</day>
-	</forecast>
-	<forecast date="2020-06-19">
-		<night>
-			<phenomenon>Variable clouds</phenomenon>
-			<tempmin>12</tempmin>
-			<tempmax>20</tempmax>
-			<text>Slightly or partly cloudy. Locally rain showers possible. Variable wind 1-7 m/s, on islands northeast wind 3-9 m/s. Air temperature 15..20, on coast locally 12..14°C.</text>
-		</night>
-		<day>
-			<phenomenon>Moderate shower</phenomenon>
-			<tempmin>16</tempmin>
-			<tempmax>30</tempmax>
-			<text>Variable cloud. Rain showers in many places, risk of thunder. Mainly wind around east 2-8 m/s. Air temperature 25..30, on islands and coast locally 16..21°C.</text>
-		</day>
-	</forecast>
+                Northern Baltic: at night wind around east 3-9 m/s, daytime variable wind 2-7 m/s, gusty during thunder.
+                Locally rain showers, risk of thunder. Visibility good, reduced in rain, at night fog possible.
+                Moonsund, Northern Gulf of Riga, Gulf of Finland: variable wind 2-7 m/s, gusty during thunder. Locally
+                rain showers, thunder in places. Visibility good, reduced in rain, at night and in morning fog in
+                places.
+            </sea>
+            <peipsi>Wind around east 2-7 m/s, gusty during thunder. Wave height up to 0.5 m. Locally rain showers,
+                thunder. Visibility good, reduced in rain. Air temperature 15..17Â°C.
+            </peipsi>
+        </night>
+        <day>
+            <phenomenon>Thunderstorm</phenomenon>
+            <tempmin>15</tempmin>
+            <tempmax>26</tempmax>
+            <text>Variable clouds. Rain showers in many places, thunder. Variable wind 2-7 m/s, gusty during thunder.
+                Air temperature 21..26, on coast 15..18Â°C.
+            </text>
+            <place>
+                <name>Harku</name>
+                <phenomenon>Thunderstorm</phenomenon>
+                <tempmax>23</tempmax>
+            </place>
+            <place>
+                <name>JÃµhvi</name>
+                <phenomenon>Moderate shower</phenomenon>
+                <tempmax>23</tempmax>
+            </place>
+            <place>
+                <name>Tartu</name>
+                <phenomenon>Thunderstorm</phenomenon>
+                <tempmax>25</tempmax>
+            </place>
+            <place>
+                <name>PÃ¤rnu</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmax>21</tempmax>
+            </place>
+            <place>
+                <name>Kuressaare</name>
+                <phenomenon>Variable clouds</phenomenon>
+                <tempmax>18</tempmax>
+            </place>
+            <place>
+                <name>TÃ¼ri</name>
+                <phenomenon>Light shower</phenomenon>
+                <tempmax>24</tempmax>
+            </place>
+            <wind>
+                <name>Kuusiku</name>
+                <direction>West wind</direction>
+                <speedmin>2</speedmin>
+                <speedmax>6</speedmax>
+                <gust></gust>
+            </wind>
+            <wind>
+                <name>VÃ¤ike-Maarja</name>
+                <direction>East wind</direction>
+                <speedmin>2</speedmin>
+                <speedmax>6</speedmax>
+                <gust></gust>
+            </wind>
+            <wind>
+                <name>VÃµrtsjÃ¤rv</name>
+                <direction>South wind</direction>
+                <speedmin>2</speedmin>
+                <speedmax>6</speedmax>
+                <gust></gust>
+            </wind>
+            <sea></sea>
+            <peipsi>Variable wind 2-7 m/s, gusty during thunder. Wave height up to 0.5 m. Locally rain showers, thunder.
+                Visibility good, reduced in rain. Air temperature 22..24Â°C.
+            </peipsi>
+        </day>
+    </forecast>
+    <forecast date="2020-06-17">
+        <night>
+            <phenomenon>Moderate shower</phenomenon>
+            <tempmin>10</tempmin>
+            <tempmax>18</tempmax>
+            <text>Cloudy with bright spells. Rain showers in many places, thunder possible. Variable wind 1-7 m/s. Air
+                temperature 13..18, on coast locally 10Â°C.
+            </text>
+        </night>
+        <day>
+            <phenomenon>Moderate shower</phenomenon>
+            <tempmin>16</tempmin>
+            <tempmax>28</tempmax>
+            <text>Variable cloud. Rain showers in many places, risk of thunder. Mainly wind around east 3-9 m/s, around
+                noon veering on islands and on the inner part of the mainland around south. Air temperature 22..28, on
+                coast locally 16..20Â°C.
+            </text>
+        </day>
+    </forecast>
+    <forecast date="2020-06-18">
+        <night>
+            <phenomenon>Light shower</phenomenon>
+            <tempmin>10</tempmin>
+            <tempmax>19</tempmax>
+            <text>Slightly or partly cloudy. Rain showers locally, risk of thunder. Variable wind 1-7 m/s. Air
+                temperature 13..19, on islands and western coast locally 10Â°C.
+            </text>
+        </night>
+        <day>
+            <phenomenon>Light shower</phenomenon>
+            <tempmin>16</tempmin>
+            <tempmax>30</tempmax>
+            <text>Slightly or partly cloudy. Locally rain showers, thunder possible. Variable wind 2-7 m/s. Air
+                temperature 24..30, on coast 16..21Â°C.
+            </text>
+        </day>
+    </forecast>
+    <forecast date="2020-06-19">
+        <night>
+            <phenomenon>Variable clouds</phenomenon>
+            <tempmin>12</tempmin>
+            <tempmax>20</tempmax>
+            <text>Slightly or partly cloudy. Locally rain showers possible. Variable wind 1-7 m/s, on islands northeast
+                wind 3-9 m/s. Air temperature 15..20, on coast locally 12..14Â°C.
+            </text>
+        </night>
+        <day>
+            <phenomenon>Moderate shower</phenomenon>
+            <tempmin>16</tempmin>
+            <tempmax>30</tempmax>
+            <text>Variable cloud. Rain showers in many places, risk of thunder. Mainly wind around east 2-8 m/s. Air
+                temperature 25..30, on islands and coast locally 16..21Â°C.
+            </text>
+        </day>
+    </forecast>
 </forecasts>

@@ -1,5 +1,6 @@
 package com.iot.assignment.model.weather.xml.forecasts;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +18,7 @@ import javax.persistence.Id;
 class ForecastUnits {
 	@Id
 	@GeneratedValue
+	@JsonIgnore
 	private Long id;
 
 //	private String visibility;

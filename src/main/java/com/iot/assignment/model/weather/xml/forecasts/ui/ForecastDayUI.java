@@ -1,5 +1,6 @@
 package com.iot.assignment.model.weather.xml.forecasts.ui;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +19,7 @@ import java.util.List;
 public class ForecastDayUI {
 	@Id
 	@GeneratedValue
+	@JsonIgnore
 	private Long id;
 
 	private String phenomenon;

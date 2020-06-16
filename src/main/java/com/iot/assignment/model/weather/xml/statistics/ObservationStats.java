@@ -1,5 +1,6 @@
 package com.iot.assignment.model.weather.xml.statistics;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +16,7 @@ import javax.persistence.*;
 public class ObservationStats {
 	@Id
 	@GeneratedValue
+	@JsonIgnore
 	private Long id;
 
 	@OneToOne(targetEntity = Stats.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
