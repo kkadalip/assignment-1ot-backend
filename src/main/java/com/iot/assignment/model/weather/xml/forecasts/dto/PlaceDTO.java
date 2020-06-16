@@ -11,10 +11,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "place")
 public class PlaceDTO {
-    @XmlElement(name = "name")
-    private String name;
-    @XmlElement(name = "phenomenon")
-    private String phenomenon;
-    @XmlElement(name = "tempmin")
-    private String tempMin;
+	@XmlElement(name = "name")
+	private String name;
+	@XmlElement(name = "phenomenon")
+	private String phenomenon;
+	@XmlElement(name = "tempmin")
+	private String tempMin;
 }

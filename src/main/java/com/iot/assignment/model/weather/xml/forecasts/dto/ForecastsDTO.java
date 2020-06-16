@@ -12,6 +12,6 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "forecasts")
 public class ForecastsDTO {
-    @XmlElement(name = "forecast")
-    private List<ForecastDTO> forecasts;
+	@XmlElement(name = "forecast")
+	private List<ForecastDTO> forecasts;
 }

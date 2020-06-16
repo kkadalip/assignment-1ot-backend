@@ -15,12 +15,12 @@ import javax.persistence.Id;
 @Builder
 @Entity
 public class Stats {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    private Double min;
-    private Double max;
-    private Double average;
-    private Long count;
+	private Double min;
+	private Double max;
+	private Double average;
+	private Long count;
 }

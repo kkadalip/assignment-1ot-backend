@@ -16,22 +16,22 @@ import java.util.List;
 @Builder
 @Entity
 public class ForecastNightUI {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    private String phenomenon;
-    private String tempMin;
-    private String tempMax;
-    private String text;
-    @OneToMany(targetEntity = PlaceUI.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @Fetch(value = FetchMode.SUBSELECT)
-    private List<PlaceUI> places;
-    @OneToMany(targetEntity = WindUI.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @Fetch(value = FetchMode.SUBSELECT)
-    private List<WindUI> winds;
-    @Column(columnDefinition="TEXT")
-    private String sea;
-    @Column(columnDefinition="TEXT")
-    private String peipsi;
+	private String phenomenon;
+	private String tempMin;
+	private String tempMax;
+	private String text;
+	@OneToMany(targetEntity = PlaceUI.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@Fetch(value = FetchMode.SUBSELECT)
+	private List<PlaceUI> places;
+	@OneToMany(targetEntity = WindUI.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@Fetch(value = FetchMode.SUBSELECT)
+	private List<WindUI> winds;
+	@Column(columnDefinition = "TEXT")
+	private String sea;
+	@Column(columnDefinition = "TEXT")
+	private String peipsi;
 }

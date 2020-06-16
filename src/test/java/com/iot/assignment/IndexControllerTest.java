@@ -23,29 +23,29 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @EnableAutoConfiguration
 public class IndexControllerTest {
 
-    @LocalServerPort
-    private int port;
+	@LocalServerPort
+	private int port;
 
-    private URL base;
+	private URL base;
 
-    @Autowired
-    private TestRestTemplate template;
+	@Autowired
+	private TestRestTemplate template;
 
-    @BeforeEach
-    public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
-    }
+	@BeforeEach
+	public void setUp() throws Exception {
+		this.base = new URL("http://localhost:" + port + "/");
+	}
 
-    @Test
-    public void indexOK() {
-        ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-        assertEquals(HttpStatus.OK.value(), response.getStatusCodeValue());
-    }
+	@Test
+	public void indexOK() {
+		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
+		assertEquals(HttpStatus.OK.value(), response.getStatusCodeValue());
+	}
 
-    @Test
-    public void indexContainsKeywords() {
-        ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-        assertTrue(StringUtils.contains(response.getBody(), "OpenAPI definition"));
-        assertTrue(StringUtils.contains(response.getBody(), "Observations"));
-    }
+	@Test
+	public void indexContainsKeywords() {
+		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
+		assertTrue(StringUtils.contains(response.getBody(), "OpenAPI definition"));
+		assertTrue(StringUtils.contains(response.getBody(), "Observations"));
+	}
 }

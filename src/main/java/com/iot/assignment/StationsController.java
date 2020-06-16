@@ -14,24 +14,24 @@ import java.util.List;
 
 @RestController
 public class StationsController {
-    private final RepositoryObservations repositoryObservations;
-    private final RepositoryForecasts repositoryForecasts;
+	private final RepositoryObservations repositoryObservations;
+	private final RepositoryForecasts repositoryForecasts;
 
-    @Autowired
-    public StationsController(RepositoryObservations observationsRepository, RepositoryForecasts repositoryForecasts) {
-        this.repositoryObservations = observationsRepository;
-        this.repositoryForecasts = repositoryForecasts;
-    }
+	@Autowired
+	public StationsController(RepositoryObservations observationsRepository, RepositoryForecasts repositoryForecasts) {
+		this.repositoryObservations = observationsRepository;
+		this.repositoryForecasts = repositoryForecasts;
+	}
 
-    @CrossOrigin //NOSONAR
-    @GetMapping("/api/stations")
-    public List<ObservationsUI> getAllStations() {
-        return new ArrayList<>(repositoryObservations.findAll());
-    }
+	@CrossOrigin //NOSONAR
+	@GetMapping("/api/stations")
+	public List<ObservationsUI> getAllStations() {
+		return new ArrayList<>(repositoryObservations.findAll());
+	}
 
-    @CrossOrigin //NOSONAR
-    @GetMapping("/api/forecasts")
-    public List<ForecastsUI> getAllForecasts() {
-        return new ArrayList<>(repositoryForecasts.findAll());
-    }
+	@CrossOrigin //NOSONAR
+	@GetMapping("/api/forecasts")
+	public List<ForecastsUI> getAllForecasts() {
+		return new ArrayList<>(repositoryForecasts.findAll());
+	}
 }

@@ -1,7 +1,7 @@
 package com.iot.assignment.interfaces;
 
 public interface DbI {
-    void updateObservations();
+	void updateObservations();
 
-    void updateForecasts();
+	void updateForecasts();
 }

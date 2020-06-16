@@ -15,13 +15,13 @@ import javax.persistence.Id;
 @Builder
 @Entity
 public class WindUI {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    private String name;
-    private String direction;
-    private String speedmin;
-    private String speedmax;
-    private String gust;
+	private String name;
+	private String direction;
+	private String speedmin;
+	private String speedmax;
+	private String gust;
 }

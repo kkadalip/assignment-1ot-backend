@@ -12,19 +12,19 @@ import java.time.format.DateTimeFormatter;
 @Slf4j
 @Component
 public class ScheduledTasks {
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+	private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    private final DbI dbI;
+	private final DbI dbI;
 
-    @Autowired
-    public ScheduledTasks(DbI dbI) {
-        this.dbI = dbI;
-    }
+	@Autowired
+	public ScheduledTasks(DbI dbI) {
+		this.dbI = dbI;
+	}
 
-    @Scheduled(fixedRate = 60000) // Every 1 minutes (1 minutes * 60000 ms in one minute)
-    public void updateObservations() {
-        log.info("updateObservations :: Fixed Rate Task :: Execution Time - {}", dtf.format(LocalDateTime.now()));
-        dbI.updateObservations();
-        dbI.updateForecasts();
-    }
+	@Scheduled(fixedRate = 60000) // Every 1 minutes (1 minutes * 60000 ms in one minute)
+	public void updateObservations() {
+		log.info("updateObservations :: Fixed Rate Task :: Execution Time - {}", dtf.format(LocalDateTime.now()));
+		dbI.updateObservations();
+		dbI.updateForecasts();
+	}
 }

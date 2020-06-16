@@ -15,16 +15,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 @EnableAutoConfiguration
 public class WeatherPropertiesTest {
 
-    @Autowired
-    private WeatherProperties weatherProperties;
+	@Autowired
+	private WeatherProperties weatherProperties;
 
-    @Test
-    public void downloadUrlExists() {
-        Assert.assertNotNull("Download URL must have a value", weatherProperties.getDownloadUrlObservations());
-    }
+	@Test
+	public void downloadUrlExists() {
+		Assert.assertNotNull("Download URL must have a value", weatherProperties.getDownloadUrlObservations());
+	}
 
-    @Test
-    public void downloadUrlValueCorrect() {
-        Assert.assertEquals("http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php", weatherProperties.getDownloadUrlObservations());
-    }
+	@Test
+	public void downloadUrlValueCorrect() {
+		Assert.assertEquals("http://www.ilmateenistus.ee/ilma_andmed/xml/observations.php", weatherProperties.getDownloadUrlObservations());
+	}
 }

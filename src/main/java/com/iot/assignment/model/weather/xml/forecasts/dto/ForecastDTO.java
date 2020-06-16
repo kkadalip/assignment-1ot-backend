@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "forecast")
 public class ForecastDTO {
-    @XmlElement(name = "night")
-    private ForecastNightDTO forecastNight;
+	@XmlElement(name = "night")
+	private ForecastNightDTO forecastNight;
 
-    @XmlElement(name = "day")
-    private ForecastDayDTO forecastDay;
+	@XmlElement(name = "day")
+	private ForecastDayDTO forecastDay;
 
-    @XmlAttribute(name = "date")
-    private String date;
+	@XmlAttribute(name = "date")
+	private String date;
 }

@@ -10,16 +10,16 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class DatabaseLoader implements CommandLineRunner {
 
-    private final DbI dbI;
+	private final DbI dbI;
 
-    @Autowired
-    public DatabaseLoader(DbI dbI) {
-        this.dbI = dbI;
-    }
+	@Autowired
+	public DatabaseLoader(DbI dbI) {
+		this.dbI = dbI;
+	}
 
-    @Override
-    public void run(String... strings) {
-        dbI.updateObservations();
-        dbI.updateForecasts();
-    }
+	@Override
+	public void run(String... strings) {
+		dbI.updateObservations();
+		dbI.updateForecasts();
+	}
 }

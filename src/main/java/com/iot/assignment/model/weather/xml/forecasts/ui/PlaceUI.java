@@ -15,11 +15,11 @@ import javax.persistence.Id;
 @Builder
 @Entity
 public class PlaceUI {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    private String name;
-    private String phenomenon;
-    private String tempMin;
+	private String name;
+	private String phenomenon;
+	private String tempMin;
 }

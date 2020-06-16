@@ -14,23 +14,23 @@ import javax.validation.constraints.NotNull;
 @PropertySource("classpath:config/weather.properties")
 public class WeatherProperties {
 
-    @NotNull
-    @Value("${download.url.observations}")
-    private String downloadUrlObservations;
+	@NotNull
+	@Value("${download.url.observations}")
+	private String downloadUrlObservations;
 
-    @NotNull
-    @Value("${download.url.forecasts}")
-    private String downloadUrlForecasts;
+	@NotNull
+	@Value("${download.url.forecasts}")
+	private String downloadUrlForecasts;
 
-    @Value("${download.url.observations.devmode-offline-sample}")
-    private boolean downloadDevmodeOfflineSampleObservations;
+	@Value("${download.url.observations.devmode-offline-sample}")
+	private boolean downloadDevmodeOfflineSampleObservations;
 
-    @Value("${download.url.observations.devmode-offline-sample.path}")
-    private String downloadDevmodeOfflineSampleObservationsPath;
+	@Value("${download.url.observations.devmode-offline-sample.path}")
+	private String downloadDevmodeOfflineSampleObservationsPath;
 
-    @Value("${download.url.forecasts.devmode-offline-sample}")
-    private boolean downloadDevmodeOfflineSampleForecasts;
+	@Value("${download.url.forecasts.devmode-offline-sample}")
+	private boolean downloadDevmodeOfflineSampleForecasts;
 
-    @Value("${download.url.forecasts.devmode-offline-sample.path}")
-    private String downloadDevmodeOfflineSampleForecastsPath;
+	@Value("${download.url.forecasts.devmode-offline-sample.path}")
+	private String downloadDevmodeOfflineSampleForecastsPath;
 }

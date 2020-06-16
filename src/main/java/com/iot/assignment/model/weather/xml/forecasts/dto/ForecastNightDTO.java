@@ -12,20 +12,20 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "night")
 public class ForecastNightDTO {
-    @XmlElement(name = "phenomenon")
-    private String phenomenon;
-    @XmlElement(name = "tempmin")
-    private String tempMin;
-    @XmlElement(name = "tempmax")
-    private String tempMax;
-    @XmlElement(name = "text")
-    private String text;
-    @XmlElement(name = "place")
-    private List<PlaceDTO> places;
-    @XmlElement(name = "wind")
-    private List<WindDTO> winds;
-    @XmlElement(name = "sea")
-    private String sea;
-    @XmlElement(name = "peipsi")
-    private String peipsi;
+	@XmlElement(name = "phenomenon")
+	private String phenomenon;
+	@XmlElement(name = "tempmin")
+	private String tempMin;
+	@XmlElement(name = "tempmax")
+	private String tempMax;
+	@XmlElement(name = "text")
+	private String text;
+	@XmlElement(name = "place")
+	private List<PlaceDTO> places;
+	@XmlElement(name = "wind")
+	private List<WindDTO> winds;
+	@XmlElement(name = "sea")
+	private String sea;
+	@XmlElement(name = "peipsi")
+	private String peipsi;
 }

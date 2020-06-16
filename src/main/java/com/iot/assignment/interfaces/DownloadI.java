@@ -6,11 +6,11 @@ import com.iot.assignment.model.weather.xml.observations.dto.ObservationsDTO;
 import com.iot.assignment.model.weather.xml.observations.ui.ObservationsUI;
 
 public interface DownloadI {
-    ObservationsDTO downloadObservationsDTO();
+	ObservationsDTO downloadObservationsDTO();
 
-    ObservationsUI downloadObservationsUI();
+	ObservationsUI downloadObservationsUI();
 
-    ForecastsDTO downloadForecastsDTO();
+	ForecastsDTO downloadForecastsDTO();
 
-    ForecastsUI downloadForecastsUI();
+	ForecastsUI downloadForecastsUI();
 }

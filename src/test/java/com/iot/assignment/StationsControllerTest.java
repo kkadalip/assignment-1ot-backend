@@ -29,45 +29,45 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 public class StationsControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
+	@Autowired
+	private MockMvc mockMvc;
 
-    @MockBean
-    private RepositoryObservations repositoryObservations;
-    @MockBean
-    private RepositoryForecasts repositoryForecasts;
+	@MockBean
+	private RepositoryObservations repositoryObservations;
+	@MockBean
+	private RepositoryForecasts repositoryForecasts;
 
-    @BeforeEach
-    public void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(new StationsController(repositoryObservations, repositoryForecasts)).build();
-    }
+	@BeforeEach
+	public void setUp() {
+		mockMvc = MockMvcBuilders.standaloneSetup(new StationsController(repositoryObservations, repositoryForecasts)).build();
+	}
 
-    @Test
-    public void getAllStationsOK() throws Exception {
-        mockMvc.perform(getReqStations()).andExpect(status().isOk());
-    }
+	@Test
+	public void getAllStationsOK() throws Exception {
+		mockMvc.perform(getReqStations()).andExpect(status().isOk());
+	}
 
-    @Test
-    public void getAllStationsUTF8() throws Exception {
-        mockMvc.perform(getReqStations().accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
-    }
+	@Test
+	public void getAllStationsUTF8() throws Exception {
+		mockMvc.perform(getReqStations().accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+	}
 
-    private MockHttpServletRequestBuilder getReqStations() {
-        return get("/api/stations");
-    }
+	private MockHttpServletRequestBuilder getReqStations() {
+		return get("/api/stations");
+	}
 
-    @Test
-    public void getAllStations404() throws Exception {
-        mockMvc.perform(get("/doesnotexist")).andExpect(status().isNotFound());
-    }
+	@Test
+	public void getAllStations404() throws Exception {
+		mockMvc.perform(get("/doesnotexist")).andExpect(status().isNotFound());
+	}
 
-    @Test
-    public void getAllStationsBodyNotNullWhenMocked() throws Exception {
-        MvcResult result = mockMvc.perform(getReqStations().accept(MediaType.APPLICATION_JSON)).andDo(print()).andReturn();
-        MockHttpServletResponse response = result.getResponse();
-        assertEquals(HttpStatus.OK.value(), response.getStatus());
-        String content = response.getContentAsString();
-        log.info("getAllStationsBody content is " + content);
-        assertNotNull(content);
-    }
+	@Test
+	public void getAllStationsBodyNotNullWhenMocked() throws Exception {
+		MvcResult result = mockMvc.perform(getReqStations().accept(MediaType.APPLICATION_JSON)).andDo(print()).andReturn();
+		MockHttpServletResponse response = result.getResponse();
+		assertEquals(HttpStatus.OK.value(), response.getStatus());
+		String content = response.getContentAsString();
+		log.info("getAllStationsBody content is " + content);
+		assertNotNull(content);
+	}
 }
