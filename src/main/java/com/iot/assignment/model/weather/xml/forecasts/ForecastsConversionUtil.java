@@ -13,6 +13,7 @@ import com.iot.assignment.model.weather.xml.forecasts.ui.ForecastsUI;
 import com.iot.assignment.model.weather.xml.forecasts.ui.PlaceUI;
 import com.iot.assignment.model.weather.xml.forecasts.ui.WindUI;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +73,7 @@ public class ForecastsConversionUtil {
 
 	private static List<PlaceUI> convertPlacesDTOtoUI(List<PlaceDTO> places) {
 		List<PlaceUI> results = new ArrayList<>();
-		if (places == null) {
+		if (CollectionUtils.isEmpty(places)) {
 			return results;
 		}
 		places.forEach(dto -> results.add(PlaceUI.builder()
@@ -86,7 +87,7 @@ public class ForecastsConversionUtil {
 
 	private static List<WindUI> convertWindsDTOtoUI(List<WindDTO> winds) {
 		List<WindUI> results = new ArrayList<>();
-		if (winds == null) {
+		if (CollectionUtils.isEmpty(winds)) {
 			return results;
 		}
 		winds.forEach(dto -> results.add(WindUI.builder()

@@ -46,6 +46,5 @@ public class IndexControllerTest {
 	public void indexContainsKeywords() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		assertTrue(StringUtils.contains(response.getBody(), "OpenAPI definition"));
-		assertTrue(StringUtils.contains(response.getBody(), "Observations"));
 	}
 }
